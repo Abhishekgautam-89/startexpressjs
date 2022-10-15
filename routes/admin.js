@@ -1,9 +1,12 @@
 const express = require('express');
+const path = require('path');
+
 const router = express.Router();
 
+
 router.get('/add-product', (req, res, next)=> {
-    console.log('First middle ware is called');
-    res.send("<form action = '/admin/add-product' method='POST'><input type='text' name='title'></br></br> <input type = 'text' name = 'Size'></br></br><button type='submit'>Add</button></form>")    
+    // console.log('First middle ware is called');
+    res.sendFile(path.join(__dirname,'../', 'views', 'admin.html')); 
 });
 
 router.post('/add-product', (req, res, next)=>{    
