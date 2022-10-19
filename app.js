@@ -3,13 +3,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-
+// all routes
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const contactusroute = require('./routes/contactus');
 const success=require('./routes/success');
 
 app.use(bodyParser.urlencoded({extended: true}));
+// to serve all the css statically
 app.use(express.static(path.join(__dirname,'public')));
 
 app.use(shopRoutes);
